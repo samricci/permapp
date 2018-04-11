@@ -1,0 +1,9 @@
+INSERT INTO plantas(CATEGORIA_ID, NOME, NOME2, NOME3, NOME4, NOME5, ESTRATO, ESPACOL, ESPACOH, TEMPO_COLHEITA, TEMPO_REBROTA, TEMPO_VIDA, VALOR_MUDA, VALOR_SEMENTE, VALOR_VENDA, INFORMACOES, IMAGEM, IMAGEM2, SOMBREAMENTO)
+VALUES(2, 'Alface', 'Alface 2', 'Alface 3', 'Alface 4', 'Alface 5', 'Estrato', '10 cm', '12 cm', '5 meses', '2 dias', '1 ano', 1.12, 1.3, 0.23, 'Informações blas blas blas', null, null, 83);
+
+INSERT INTO plantas(CATEGORIA_ID, NOME) VALUES(1, 'Brócolis');
+INSERT INTO plantas(CATEGORIA_ID, NOME) VALUES(2, 'Batata');
+INSERT INTO plantas(CATEGORIA_ID, NOME) VALUES(3, 'Mostarda');
+INSERT INTO plantas(CATEGORIA_ID, NOME) VALUES(1, 'Couve');
+INSERT INTO plantas(CATEGORIA_ID, NOME) VALUES(1, 'Hortelã');
+INSERT INTO plantas(CATEGORIA_ID, NOME) VALUES(3, 'Manjericão');
