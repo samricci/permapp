@@ -9,6 +9,10 @@ CREATE TABLE hortas(
   ESTADO VARCHAR(20)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE INDEX hortas_nome ON hortas(NOME);
+CREATE INDEX hortas_cidade ON hortas(CIDADE);
+CREATE INDEX hortas_estado ON hortas(ESTADO);
+
 INSERT INTO hortas(NOME, LOGRADOURO, NUMERO, COMPLEMENTO, CEP, CIDADE, ESTADO) VALUES ('Horta 1', 'Rua José Ferreiro', '123', 'NA', '01233-020', 'São Paulo', 'SP');
 INSERT INTO hortas(NOME) VALUES ('Horta 2');
 INSERT INTO hortas(NOME) VALUES ('Horta 3');
