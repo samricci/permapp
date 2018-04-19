@@ -2,11 +2,13 @@ package com.permapp.permappapi;
 
 import static com.permapp.permappapi.constants.ExceptionsConstants.ENTITY_ALREADY_EXISTS_PROPERTY;
 import static com.permapp.permappapi.constants.ExceptionsConstants.ENTITY_NOT_FOUND_PROPERTY;
+import static com.permapp.permappapi.constants.ExceptionsConstants.ENUM_NOT_FOUND_PROPERTY;
 import static com.permapp.permappapi.constants.ExceptionsConstants.MISSING_FIELD_PROPERTY;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 import com.permapp.permappapi.exception.EntityAlreadyExistsException;
 import com.permapp.permappapi.exception.EntityNotFoundException;
+import com.permapp.permappapi.exception.EnumNotFoundException;
 import com.permapp.permappapi.exception.MissingFieldException;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +47,12 @@ public class PermappExceptionHandler extends ResponseEntityExceptionHandler {
   @ExceptionHandler( {EntityAlreadyExistsException.class} )
   public ResponseEntity<Object> handleEntityAlreadyExistsException(EntityAlreadyExistsException ex, WebRequest request) {
     String errorMessage = getMessageFromProperty(ENTITY_ALREADY_EXISTS_PROPERTY) + ex.getEntity().getSimpleName();
+    return handleExceptionInternal(ex, errorMessage, new HttpHeaders(), ex.getStatus(), request);
+  }
+
+  @ExceptionHandler( {EnumNotFoundException.class})
+  public ResponseEntity<Object> handleEnumNotFoundException(EnumNotFoundException ex, WebRequest request) {
+    String errorMessage = getMessageFromProperty(ENUM_NOT_FOUND_PROPERTY) + ex.getEntity().getSimpleName();
     return handleExceptionInternal(ex, errorMessage, new HttpHeaders(), ex.getStatus(), request);
   }
 
